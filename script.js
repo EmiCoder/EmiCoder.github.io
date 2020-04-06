@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  var apiRoot = 'http://localhost:8080/v1/task';
+  var apiRoot = 'https://rest-api-3.herokuapp.com/v1/task';
   var datatableRowTemplate = $('[data-datatable-row-template]').children()[0];
   var tasksContainer = $('[data-tasks-container]');
 
@@ -63,10 +63,10 @@ $(document).ready(function() {
     });
   }
 
-  function handleTaskDeleteRequest() {
+function handleTaskDeleteRequest() {
     var parentEl = $(this).parent().parent();
     var taskId = parentEl.attr('data-task-id');
-    var requestUrl = apiRoot + '/{id}';
+    var requestUrl = apiRoot;
 
     $.ajax({
       url: requestUrl + '/?' + $.param({
